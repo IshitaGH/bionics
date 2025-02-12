@@ -56,7 +56,7 @@ int readPressure() {
 // if the difference in the pressure readings is greater than the pressure threshold,
 // keep closing the hand
 // else, stop closing the hand because you are starting to crush the object
-bool closeHand() {
+void closeHand() {
   const int NUM_READINGS = 10;
   int pressureReadings[NUM_READINGS] = {};
   int index = 0;
@@ -78,7 +78,6 @@ bool closeHand() {
     position++;
     pressureTotal += pressureReadings[index];
   }
-  readPressure();
 }
 
 void moveHand(bool close) {
